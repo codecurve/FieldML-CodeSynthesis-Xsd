@@ -31,8 +31,12 @@
 // in the accompanying FLOSSE file.
 //
 
-#ifndef FIELD_ML_0_5_XLINK_URL_IS_CELLML_HXX
-#define FIELD_ML_0_5_XLINK_URL_IS_CELLML_HXX
+#ifndef FIELD_ML_0_5_HXX
+#define FIELD_ML_0_5_HXX
+
+#ifndef XSD_CXX11
+#define XSD_CXX11
+#endif
 
 #ifndef XSD_USE_CHAR
 #define XSD_USE_CHAR
@@ -209,7 +213,7 @@ namespace xml_schema
   {
     // Automatic pointer for DOMDocument.
     //
-    using ::xsd::cxx::xml::dom::auto_ptr;
+    using ::xsd::cxx::xml::dom::unique_ptr;
 
 #ifndef XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
 #define XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
@@ -273,9 +277,10 @@ class AggregateEvaluator_Type;
 class Region_Type;
 class Fieldml_Type;
 
-#include <memory>    // ::std::auto_ptr
+#include <memory>    // ::std::unique_ptr
 #include <limits>    // std::numeric_limits
 #include <algorithm> // std::binary_search
+#include <utility>   // std::move
 
 #include <xsd/cxx/xml/char-utf8.hxx>
 
@@ -286,7 +291,7 @@ class Fieldml_Type;
 
 #include <xsd/cxx/xml/dom/parsing-header.hxx>
 
-#include "xlink-href-from-cellml.hxx"
+#include "xlink-href.hxx"
 
 class FieldmlRdfTargetType: public ::xml_schema::type
 {
@@ -310,7 +315,7 @@ class FieldmlRdfTargetType: public ::xml_schema::type
   id (const id_optional& x);
 
   void
-  id (::std::auto_ptr< id_type > p);
+  id (::std::unique_ptr< id_type > p);
 
   // Constructors.
   //
@@ -363,7 +368,7 @@ class FieldmlObject_Type: public ::FieldmlRdfTargetType
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // Constructors.
   //
@@ -581,7 +586,7 @@ class ArrayDataSource_Type: public ::xml_schema::type
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // location
   //
@@ -598,7 +603,7 @@ class ArrayDataSource_Type: public ::xml_schema::type
   location (const location_type& x);
 
   void
-  location (::std::auto_ptr< location_type > p);
+  location (::std::unique_ptr< location_type > p);
 
   // rank
   //
@@ -672,7 +677,7 @@ class DataResourceHref_Type: public ::xml_schema::type
   href (const href_type& x);
 
   void
-  href (::std::auto_ptr< href_type > p);
+  href (::std::unique_ptr< href_type > p);
 
   // format
   //
@@ -689,7 +694,7 @@ class DataResourceHref_Type: public ::xml_schema::type
   format (const format_type& x);
 
   void
-  format (::std::auto_ptr< format_type > p);
+  format (::std::unique_ptr< format_type > p);
 
   // Constructors.
   //
@@ -786,7 +791,7 @@ class DataResourceDescription_Type: public ::xml_schema::type
   DataResourceHref (const DataResourceHref_optional& x);
 
   void
-  DataResourceHref (::std::auto_ptr< DataResourceHref_type > p);
+  DataResourceHref (::std::unique_ptr< DataResourceHref_type > p);
 
   // DataResourceString
   //
@@ -807,7 +812,7 @@ class DataResourceDescription_Type: public ::xml_schema::type
   DataResourceString (const DataResourceString_optional& x);
 
   void
-  DataResourceString (::std::auto_ptr< DataResourceString_type > p);
+  DataResourceString (::std::unique_ptr< DataResourceString_type > p);
 
   // Constructors.
   //
@@ -895,7 +900,7 @@ class DataResource_Type: public ::xml_schema::type
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // Constructors.
   //
@@ -950,7 +955,7 @@ class ImportTypeEntry_Type: public ::xml_schema::type
   localName (const localName_type& x);
 
   void
-  localName (::std::auto_ptr< localName_type > p);
+  localName (::std::unique_ptr< localName_type > p);
 
   // remoteName
   //
@@ -967,7 +972,7 @@ class ImportTypeEntry_Type: public ::xml_schema::type
   remoteName (const remoteName_type& x);
 
   void
-  remoteName (::std::auto_ptr< remoteName_type > p);
+  remoteName (::std::unique_ptr< remoteName_type > p);
 
   // Constructors.
   //
@@ -1022,7 +1027,7 @@ class ImportEvaluatorEntry_Type: public ::xml_schema::type
   localName (const localName_type& x);
 
   void
-  localName (::std::auto_ptr< localName_type > p);
+  localName (::std::unique_ptr< localName_type > p);
 
   // remoteName
   //
@@ -1039,7 +1044,7 @@ class ImportEvaluatorEntry_Type: public ::xml_schema::type
   remoteName (const remoteName_type& x);
 
   void
-  remoteName (::std::auto_ptr< remoteName_type > p);
+  remoteName (::std::unique_ptr< remoteName_type > p);
 
   // Constructors.
   //
@@ -1128,7 +1133,7 @@ class Import_Type: public ::xml_schema::type
   href (const href_type& x);
 
   void
-  href (::std::auto_ptr< href_type > p);
+  href (::std::unique_ptr< href_type > p);
 
   // region
   //
@@ -1145,7 +1150,7 @@ class Import_Type: public ::xml_schema::type
   region (const region_type& x);
 
   void
-  region (::std::auto_ptr< region_type > p);
+  region (::std::unique_ptr< region_type > p);
 
   // Constructors.
   //
@@ -1202,7 +1207,7 @@ class NumberedIndexEvaluator_Type: public ::xml_schema::type
   evaluator (const evaluator_type& x);
 
   void
-  evaluator (::std::auto_ptr< evaluator_type > p);
+  evaluator (::std::unique_ptr< evaluator_type > p);
 
   // indexNumber
   //
@@ -1324,7 +1329,7 @@ class BindMapEntry_Type: public ::xml_schema::type
   argument (const argument_type& x);
 
   void
-  argument (::std::auto_ptr< argument_type > p);
+  argument (::std::unique_ptr< argument_type > p);
 
   // source
   //
@@ -1341,7 +1346,7 @@ class BindMapEntry_Type: public ::xml_schema::type
   source (const source_type& x);
 
   void
-  source (::std::auto_ptr< source_type > p);
+  source (::std::unique_ptr< source_type > p);
 
   // Constructors.
   //
@@ -1396,7 +1401,7 @@ class BindMapIndexEntry_Type: public ::xml_schema::type
   argument (const argument_type& x);
 
   void
-  argument (::std::auto_ptr< argument_type > p);
+  argument (::std::unique_ptr< argument_type > p);
 
   // indexNumber
   //
@@ -1603,7 +1608,7 @@ class ComponentEvaluatorsEntry_Type: public ::xml_schema::type
   evaluator (const evaluator_type& x);
 
   void
-  evaluator (::std::auto_ptr< evaluator_type > p);
+  evaluator (::std::unique_ptr< evaluator_type > p);
 
   // Constructors.
   //
@@ -1679,7 +1684,7 @@ class ComponentEvaluators_Type: public ::xml_schema::type
   default_ (const default_optional& x);
 
   void
-  default_ (::std::auto_ptr< default_type > p);
+  default_ (::std::unique_ptr< default_type > p);
 
   // Constructors.
   //
@@ -1733,7 +1738,7 @@ class ShapeMap_Type: public ::xml_schema::type
   evaluator (const evaluator_type& x);
 
   void
-  evaluator (::std::auto_ptr< evaluator_type > p);
+  evaluator (::std::unique_ptr< evaluator_type > p);
 
   // Constructors.
   //
@@ -1786,7 +1791,7 @@ class ArgumentListEntry_Type: public ::xml_schema::type
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // Constructors.
   //
@@ -1892,7 +1897,7 @@ class EvaluatorListEntry_Type: public ::xml_schema::type
   evaluator (const evaluator_type& x);
 
   void
-  evaluator (::std::auto_ptr< evaluator_type > p);
+  evaluator (::std::unique_ptr< evaluator_type > p);
 
   // Constructors.
   //
@@ -1998,7 +2003,7 @@ class OrderedEvaluatorListEntry_Type: public ::xml_schema::type
   evaluator (const evaluator_type& x);
 
   void
-  evaluator (::std::auto_ptr< evaluator_type > p);
+  evaluator (::std::unique_ptr< evaluator_type > p);
 
   // order
   //
@@ -2019,7 +2024,7 @@ class OrderedEvaluatorListEntry_Type: public ::xml_schema::type
   order (const order_optional& x);
 
   void
-  order (::std::auto_ptr< order_type > p);
+  order (::std::unique_ptr< order_type > p);
 
   // Constructors.
   //
@@ -2225,7 +2230,7 @@ class MemberData_Type: public ::xml_schema::type
   data (const data_type& x);
 
   void
-  data (::std::auto_ptr< data_type > p);
+  data (::std::unique_ptr< data_type > p);
 
   // Constructors.
   //
@@ -2284,7 +2289,7 @@ class EnsembleMembers_Type: public ::xml_schema::type
   MemberListData (const MemberListData_optional& x);
 
   void
-  MemberListData (::std::auto_ptr< MemberListData_type > p);
+  MemberListData (::std::unique_ptr< MemberListData_type > p);
 
   // MemberRangeData
   //
@@ -2305,7 +2310,7 @@ class EnsembleMembers_Type: public ::xml_schema::type
   MemberRangeData (const MemberRangeData_optional& x);
 
   void
-  MemberRangeData (::std::auto_ptr< MemberRangeData_type > p);
+  MemberRangeData (::std::unique_ptr< MemberRangeData_type > p);
 
   // MemberStrideRangeData
   //
@@ -2326,7 +2331,7 @@ class EnsembleMembers_Type: public ::xml_schema::type
   MemberStrideRangeData (const MemberStrideRangeData_optional& x);
 
   void
-  MemberStrideRangeData (::std::auto_ptr< MemberStrideRangeData_type > p);
+  MemberStrideRangeData (::std::unique_ptr< MemberStrideRangeData_type > p);
 
   // MemberRange
   //
@@ -2347,7 +2352,7 @@ class EnsembleMembers_Type: public ::xml_schema::type
   MemberRange (const MemberRange_optional& x);
 
   void
-  MemberRange (::std::auto_ptr< MemberRange_type > p);
+  MemberRange (::std::unique_ptr< MemberRange_type > p);
 
   // Constructors.
   //
@@ -2426,7 +2431,7 @@ class EnsembleType_Type: public ::FieldmlObject_Type
   Members (const Members_type& x);
 
   void
-  Members (::std::auto_ptr< Members_type > p);
+  Members (::std::unique_ptr< Members_type > p);
 
   // Constructors.
   //
@@ -2434,7 +2439,7 @@ class EnsembleType_Type: public ::FieldmlObject_Type
                      const Members_type&);
 
   EnsembleType_Type (const name_type&,
-                     ::std::auto_ptr< Members_type >);
+                     ::std::unique_ptr< Members_type >);
 
   EnsembleType_Type (const ::xercesc::DOMElement& e,
                      ::xml_schema::flags f = 0,
@@ -2483,7 +2488,7 @@ class ContinuousComponent_Type: public ::xml_schema::type
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // count
   //
@@ -2556,7 +2561,7 @@ class ContinuousType_Type: public ::FieldmlObject_Type
   Components (const Components_optional& x);
 
   void
-  Components (::std::auto_ptr< Components_type > p);
+  Components (::std::unique_ptr< Components_type > p);
 
   // Constructors.
   //
@@ -2609,7 +2614,7 @@ class MeshType_Type: public ::FieldmlObject_Type
   Elements (const Elements_type& x);
 
   void
-  Elements (::std::auto_ptr< Elements_type > p);
+  Elements (::std::unique_ptr< Elements_type > p);
 
   // Chart
   //
@@ -2626,7 +2631,7 @@ class MeshType_Type: public ::FieldmlObject_Type
   Chart (const Chart_type& x);
 
   void
-  Chart (::std::auto_ptr< Chart_type > p);
+  Chart (::std::unique_ptr< Chart_type > p);
 
   // Shapes
   //
@@ -2643,7 +2648,7 @@ class MeshType_Type: public ::FieldmlObject_Type
   Shapes (const Shapes_type& x);
 
   void
-  Shapes (::std::auto_ptr< Shapes_type > p);
+  Shapes (::std::unique_ptr< Shapes_type > p);
 
   // Constructors.
   //
@@ -2653,9 +2658,9 @@ class MeshType_Type: public ::FieldmlObject_Type
                  const Shapes_type&);
 
   MeshType_Type (const name_type&,
-                 ::std::auto_ptr< Elements_type >,
-                 ::std::auto_ptr< Chart_type >,
-                 ::std::auto_ptr< Shapes_type >);
+                 ::std::unique_ptr< Elements_type >,
+                 ::std::unique_ptr< Chart_type >,
+                 ::std::unique_ptr< Shapes_type >);
 
   MeshType_Type (const ::xercesc::DOMElement& e,
                  ::xml_schema::flags f = 0,
@@ -2710,7 +2715,7 @@ class FieldmlEvaluator_Type: public ::FieldmlObject_Type
   Arguments (const Arguments_optional& x);
 
   void
-  Arguments (::std::auto_ptr< Arguments_type > p);
+  Arguments (::std::unique_ptr< Arguments_type > p);
 
   // valueType
   //
@@ -2727,7 +2732,7 @@ class FieldmlEvaluator_Type: public ::FieldmlObject_Type
   valueType (const valueType_type& x);
 
   void
-  valueType (::std::auto_ptr< valueType_type > p);
+  valueType (::std::unique_ptr< valueType_type > p);
 
   // Constructors.
   //
@@ -2830,7 +2835,7 @@ class ConstantEvaluator_Type: public ::FieldmlObject_Type
   value (const value_type& x);
 
   void
-  value (::std::auto_ptr< value_type > p);
+  value (::std::unique_ptr< value_type > p);
 
   // valueType
   //
@@ -2847,7 +2852,7 @@ class ConstantEvaluator_Type: public ::FieldmlObject_Type
   valueType (const valueType_type& x);
 
   void
-  valueType (::std::auto_ptr< valueType_type > p);
+  valueType (::std::unique_ptr< valueType_type > p);
 
   // Constructors.
   //
@@ -2907,7 +2912,7 @@ class ReferenceEvaluator_Type: public ::FieldmlObject_Type
   Arguments (const Arguments_optional& x);
 
   void
-  Arguments (::std::auto_ptr< Arguments_type > p);
+  Arguments (::std::unique_ptr< Arguments_type > p);
 
   // Bindings
   //
@@ -2928,7 +2933,7 @@ class ReferenceEvaluator_Type: public ::FieldmlObject_Type
   Bindings (const Bindings_optional& x);
 
   void
-  Bindings (::std::auto_ptr< Bindings_type > p);
+  Bindings (::std::unique_ptr< Bindings_type > p);
 
   // valueType
   //
@@ -2949,7 +2954,7 @@ class ReferenceEvaluator_Type: public ::FieldmlObject_Type
   valueType (const valueType_optional& x);
 
   void
-  valueType (::std::auto_ptr< valueType_type > p);
+  valueType (::std::unique_ptr< valueType_type > p);
 
   // evaluator
   //
@@ -2966,7 +2971,7 @@ class ReferenceEvaluator_Type: public ::FieldmlObject_Type
   evaluator (const evaluator_type& x);
 
   void
-  evaluator (::std::auto_ptr< evaluator_type > p);
+  evaluator (::std::unique_ptr< evaluator_type > p);
 
   // Constructors.
   //
@@ -3037,7 +3042,7 @@ class EvaluatorMapEntry_Type: public ::xml_schema::type
   evaluator (const evaluator_type& x);
 
   void
-  evaluator (::std::auto_ptr< evaluator_type > p);
+  evaluator (::std::unique_ptr< evaluator_type > p);
 
   // Constructors.
   //
@@ -3113,7 +3118,7 @@ class EvaluatorMap_Type: public ::xml_schema::type
   default_ (const default_optional& x);
 
   void
-  default_ (::std::auto_ptr< default_type > p);
+  default_ (::std::unique_ptr< default_type > p);
 
   // Constructors.
   //
@@ -3171,7 +3176,7 @@ class PiecewiseEvaluator_Type: public ::FieldmlEvaluator_Type
   Bindings (const Bindings_optional& x);
 
   void
-  Bindings (::std::auto_ptr< Bindings_type > p);
+  Bindings (::std::unique_ptr< Bindings_type > p);
 
   // IndexEvaluators
   //
@@ -3192,7 +3197,7 @@ class PiecewiseEvaluator_Type: public ::FieldmlEvaluator_Type
   IndexEvaluators (const IndexEvaluators_optional& x);
 
   void
-  IndexEvaluators (::std::auto_ptr< IndexEvaluators_type > p);
+  IndexEvaluators (::std::unique_ptr< IndexEvaluators_type > p);
 
   // EvaluatorMap
   //
@@ -3209,7 +3214,7 @@ class PiecewiseEvaluator_Type: public ::FieldmlEvaluator_Type
   EvaluatorMap (const EvaluatorMap_type& x);
 
   void
-  EvaluatorMap (::std::auto_ptr< EvaluatorMap_type > p);
+  EvaluatorMap (::std::unique_ptr< EvaluatorMap_type > p);
 
   // Constructors.
   //
@@ -3219,7 +3224,7 @@ class PiecewiseEvaluator_Type: public ::FieldmlEvaluator_Type
 
   PiecewiseEvaluator_Type (const name_type&,
                            const valueType_type&,
-                           ::std::auto_ptr< EvaluatorMap_type >);
+                           ::std::unique_ptr< EvaluatorMap_type >);
 
   PiecewiseEvaluator_Type (const ::xercesc::DOMElement& e,
                            ::xml_schema::flags f = 0,
@@ -3274,7 +3279,7 @@ class DenseArrayData_Type: public ::xml_schema::type
   DenseIndexes (const DenseIndexes_optional& x);
 
   void
-  DenseIndexes (::std::auto_ptr< DenseIndexes_type > p);
+  DenseIndexes (::std::unique_ptr< DenseIndexes_type > p);
 
   // data
   //
@@ -3291,7 +3296,7 @@ class DenseArrayData_Type: public ::xml_schema::type
   data (const data_type& x);
 
   void
-  data (::std::auto_ptr< data_type > p);
+  data (::std::unique_ptr< data_type > p);
 
   // Constructors.
   //
@@ -3349,7 +3354,7 @@ class DOKArrayData_Type: public ::xml_schema::type
   DenseIndexes (const DenseIndexes_optional& x);
 
   void
-  DenseIndexes (::std::auto_ptr< DenseIndexes_type > p);
+  DenseIndexes (::std::unique_ptr< DenseIndexes_type > p);
 
   // SparseIndexes
   //
@@ -3366,7 +3371,7 @@ class DOKArrayData_Type: public ::xml_schema::type
   SparseIndexes (const SparseIndexes_type& x);
 
   void
-  SparseIndexes (::std::auto_ptr< SparseIndexes_type > p);
+  SparseIndexes (::std::unique_ptr< SparseIndexes_type > p);
 
   // keyData
   //
@@ -3383,7 +3388,7 @@ class DOKArrayData_Type: public ::xml_schema::type
   keyData (const keyData_type& x);
 
   void
-  keyData (::std::auto_ptr< keyData_type > p);
+  keyData (::std::unique_ptr< keyData_type > p);
 
   // valueData
   //
@@ -3400,7 +3405,7 @@ class DOKArrayData_Type: public ::xml_schema::type
   valueData (const valueData_type& x);
 
   void
-  valueData (::std::auto_ptr< valueData_type > p);
+  valueData (::std::unique_ptr< valueData_type > p);
 
   // Constructors.
   //
@@ -3408,7 +3413,7 @@ class DOKArrayData_Type: public ::xml_schema::type
                      const keyData_type&,
                      const valueData_type&);
 
-  DOKArrayData_Type (::std::auto_ptr< SparseIndexes_type >,
+  DOKArrayData_Type (::std::unique_ptr< SparseIndexes_type >,
                      const keyData_type&,
                      const valueData_type&);
 
@@ -3466,7 +3471,7 @@ class ParameterEvaluator_Type: public ::FieldmlEvaluator_Type
   DenseArrayData (const DenseArrayData_optional& x);
 
   void
-  DenseArrayData (::std::auto_ptr< DenseArrayData_type > p);
+  DenseArrayData (::std::unique_ptr< DenseArrayData_type > p);
 
   // DOKArrayData
   //
@@ -3487,7 +3492,7 @@ class ParameterEvaluator_Type: public ::FieldmlEvaluator_Type
   DOKArrayData (const DOKArrayData_optional& x);
 
   void
-  DOKArrayData (::std::auto_ptr< DOKArrayData_type > p);
+  DOKArrayData (::std::unique_ptr< DOKArrayData_type > p);
 
   // Constructors.
   //
@@ -3546,7 +3551,7 @@ class AggregateEvaluator_Type: public ::FieldmlEvaluator_Type
   Bindings (const Bindings_optional& x);
 
   void
-  Bindings (::std::auto_ptr< Bindings_type > p);
+  Bindings (::std::unique_ptr< Bindings_type > p);
 
   // ComponentEvaluators
   //
@@ -3563,7 +3568,7 @@ class AggregateEvaluator_Type: public ::FieldmlEvaluator_Type
   ComponentEvaluators (const ComponentEvaluators_type& x);
 
   void
-  ComponentEvaluators (::std::auto_ptr< ComponentEvaluators_type > p);
+  ComponentEvaluators (::std::unique_ptr< ComponentEvaluators_type > p);
 
   // Constructors.
   //
@@ -3573,7 +3578,7 @@ class AggregateEvaluator_Type: public ::FieldmlEvaluator_Type
 
   AggregateEvaluator_Type (const name_type&,
                            const valueType_type&,
-                           ::std::auto_ptr< ComponentEvaluators_type >);
+                           ::std::unique_ptr< ComponentEvaluators_type >);
 
   AggregateEvaluator_Type (const ::xercesc::DOMElement& e,
                            ::xml_schema::flags f = 0,
@@ -3844,7 +3849,7 @@ class Region_Type: public ::FieldmlRdfTargetType
   name (const name_type& x);
 
   void
-  name (::std::auto_ptr< name_type > p);
+  name (::std::unique_ptr< name_type > p);
 
   // Constructors.
   //
@@ -3910,7 +3915,7 @@ class Fieldml_Type: public ::FieldmlRdfTargetType
   Region (const Region_type& x);
 
   void
-  Region (::std::auto_ptr< Region_type > p);
+  Region (::std::unique_ptr< Region_type > p);
 
   // version
   //
@@ -3931,13 +3936,13 @@ class Fieldml_Type: public ::FieldmlRdfTargetType
   version (const version_optional& x);
 
   void
-  version (::std::auto_ptr< version_type > p);
+  version (::std::unique_ptr< version_type > p);
 
   // Constructors.
   //
   Fieldml_Type (const Region_type&);
 
-  Fieldml_Type (::std::auto_ptr< Region_type >);
+  Fieldml_Type (::std::unique_ptr< Region_type >);
 
   Fieldml_Type (const ::xercesc::DOMElement& e,
                 ::xml_schema::flags f = 0,
@@ -3978,18 +3983,18 @@ class Fieldml_Type: public ::FieldmlRdfTargetType
 // Parse a URI or a local file.
 //
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (const ::std::string& uri,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (const ::std::string& uri,
          ::xml_schema::error_handler& eh,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (const ::std::string& uri,
          ::xercesc::DOMErrorHandler& eh,
          ::xml_schema::flags f = 0,
@@ -3998,37 +4003,37 @@ Fieldml (const ::std::string& uri,
 // Parse std::istream.
 //
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          ::xml_schema::error_handler& eh,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          ::xercesc::DOMErrorHandler& eh,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          const ::std::string& id,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          const ::std::string& id,
          ::xml_schema::error_handler& eh,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          const ::std::string& id,
          ::xercesc::DOMErrorHandler& eh,
@@ -4038,18 +4043,18 @@ Fieldml (::std::istream& is,
 // Parse xercesc::InputSource.
 //
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::xercesc::InputSource& is,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::xercesc::InputSource& is,
          ::xml_schema::error_handler& eh,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::xercesc::InputSource& is,
          ::xercesc::DOMErrorHandler& eh,
          ::xml_schema::flags f = 0,
@@ -4058,13 +4063,13 @@ Fieldml (::xercesc::InputSource& is,
 // Parse xercesc::DOMDocument.
 //
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (const ::xercesc::DOMDocument& d,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-::std::auto_ptr< ::Fieldml_Type >
-Fieldml (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
+::std::unique_ptr< ::Fieldml_Type >
+Fieldml (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
 
@@ -4075,4 +4080,4 @@ Fieldml (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
 //
 // End epilogue.
 
-#endif // FIELD_ML_0_5_XLINK_URL_IS_CELLML_HXX
+#endif // FIELD_ML_0_5_HXX

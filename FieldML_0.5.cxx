@@ -38,7 +38,7 @@
 
 #include <xsd/cxx/pre.hxx>
 
-#include "FieldML_0.5-xlinkUrlIsCellml.hxx"
+#include "FieldML_0.5.hxx"
 
 // FieldmlRdfTargetType
 // 
@@ -68,9 +68,9 @@ id (const id_optional& x)
 }
 
 void FieldmlRdfTargetType::
-id (::std::auto_ptr< id_type > x)
+id (::std::unique_ptr< id_type > x)
 {
-  this->id_.set (x);
+  this->id_.set (std::move (x));
 }
 
 
@@ -96,9 +96,9 @@ name (const name_type& x)
 }
 
 void FieldmlObject_Type::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 
@@ -190,9 +190,9 @@ name (const name_type& x)
 }
 
 void ArrayDataSource_Type::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const ArrayDataSource_Type::location_type& ArrayDataSource_Type::
@@ -214,9 +214,9 @@ location (const location_type& x)
 }
 
 void ArrayDataSource_Type::
-location (::std::auto_ptr< location_type > x)
+location (::std::unique_ptr< location_type > x)
 {
-  this->location_.set (x);
+  this->location_.set (std::move (x));
 }
 
 const ArrayDataSource_Type::rank_type& ArrayDataSource_Type::
@@ -260,9 +260,9 @@ href (const href_type& x)
 }
 
 void DataResourceHref_Type::
-href (::std::auto_ptr< href_type > x)
+href (::std::unique_ptr< href_type > x)
 {
-  this->href_.set (x);
+  this->href_.set (std::move (x));
 }
 
 const DataResourceHref_Type::format_type& DataResourceHref_Type::
@@ -284,9 +284,9 @@ format (const format_type& x)
 }
 
 void DataResourceHref_Type::
-format (::std::auto_ptr< format_type > x)
+format (::std::unique_ptr< format_type > x)
 {
-  this->format_.set (x);
+  this->format_.set (std::move (x));
 }
 
 
@@ -322,9 +322,9 @@ DataResourceHref (const DataResourceHref_optional& x)
 }
 
 void DataResourceDescription_Type::
-DataResourceHref (::std::auto_ptr< DataResourceHref_type > x)
+DataResourceHref (::std::unique_ptr< DataResourceHref_type > x)
 {
-  this->DataResourceHref_.set (x);
+  this->DataResourceHref_.set (std::move (x));
 }
 
 const DataResourceDescription_Type::DataResourceString_optional& DataResourceDescription_Type::
@@ -352,9 +352,9 @@ DataResourceString (const DataResourceString_optional& x)
 }
 
 void DataResourceDescription_Type::
-DataResourceString (::std::auto_ptr< DataResourceString_type > x)
+DataResourceString (::std::unique_ptr< DataResourceString_type > x)
 {
-  this->DataResourceString_.set (x);
+  this->DataResourceString_.set (std::move (x));
 }
 
 
@@ -416,9 +416,9 @@ name (const name_type& x)
 }
 
 void DataResource_Type::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 
@@ -444,9 +444,9 @@ localName (const localName_type& x)
 }
 
 void ImportTypeEntry_Type::
-localName (::std::auto_ptr< localName_type > x)
+localName (::std::unique_ptr< localName_type > x)
 {
-  this->localName_.set (x);
+  this->localName_.set (std::move (x));
 }
 
 const ImportTypeEntry_Type::remoteName_type& ImportTypeEntry_Type::
@@ -468,9 +468,9 @@ remoteName (const remoteName_type& x)
 }
 
 void ImportTypeEntry_Type::
-remoteName (::std::auto_ptr< remoteName_type > x)
+remoteName (::std::unique_ptr< remoteName_type > x)
 {
-  this->remoteName_.set (x);
+  this->remoteName_.set (std::move (x));
 }
 
 
@@ -496,9 +496,9 @@ localName (const localName_type& x)
 }
 
 void ImportEvaluatorEntry_Type::
-localName (::std::auto_ptr< localName_type > x)
+localName (::std::unique_ptr< localName_type > x)
 {
-  this->localName_.set (x);
+  this->localName_.set (std::move (x));
 }
 
 const ImportEvaluatorEntry_Type::remoteName_type& ImportEvaluatorEntry_Type::
@@ -520,9 +520,9 @@ remoteName (const remoteName_type& x)
 }
 
 void ImportEvaluatorEntry_Type::
-remoteName (::std::auto_ptr< remoteName_type > x)
+remoteName (::std::unique_ptr< remoteName_type > x)
 {
-  this->remoteName_.set (x);
+  this->remoteName_.set (std::move (x));
 }
 
 
@@ -584,9 +584,9 @@ href (const href_type& x)
 }
 
 void Import_Type::
-href (::std::auto_ptr< href_type > x)
+href (::std::unique_ptr< href_type > x)
 {
-  this->href_.set (x);
+  this->href_.set (std::move (x));
 }
 
 const Import_Type::region_type& Import_Type::
@@ -608,9 +608,9 @@ region (const region_type& x)
 }
 
 void Import_Type::
-region (::std::auto_ptr< region_type > x)
+region (::std::unique_ptr< region_type > x)
 {
-  this->region_.set (x);
+  this->region_.set (std::move (x));
 }
 
 
@@ -636,9 +636,9 @@ evaluator (const evaluator_type& x)
 }
 
 void NumberedIndexEvaluator_Type::
-evaluator (::std::auto_ptr< evaluator_type > x)
+evaluator (::std::unique_ptr< evaluator_type > x)
 {
-  this->evaluator_.set (x);
+  this->evaluator_.set (std::move (x));
 }
 
 const NumberedIndexEvaluator_Type::indexNumber_type& NumberedIndexEvaluator_Type::
@@ -704,9 +704,9 @@ argument (const argument_type& x)
 }
 
 void BindMapEntry_Type::
-argument (::std::auto_ptr< argument_type > x)
+argument (::std::unique_ptr< argument_type > x)
 {
-  this->argument_.set (x);
+  this->argument_.set (std::move (x));
 }
 
 const BindMapEntry_Type::source_type& BindMapEntry_Type::
@@ -728,9 +728,9 @@ source (const source_type& x)
 }
 
 void BindMapEntry_Type::
-source (::std::auto_ptr< source_type > x)
+source (::std::unique_ptr< source_type > x)
 {
-  this->source_.set (x);
+  this->source_.set (std::move (x));
 }
 
 
@@ -756,9 +756,9 @@ argument (const argument_type& x)
 }
 
 void BindMapIndexEntry_Type::
-argument (::std::auto_ptr< argument_type > x)
+argument (::std::unique_ptr< argument_type > x)
 {
-  this->argument_.set (x);
+  this->argument_.set (std::move (x));
 }
 
 const BindMapIndexEntry_Type::indexNumber_type& BindMapIndexEntry_Type::
@@ -882,9 +882,9 @@ evaluator (const evaluator_type& x)
 }
 
 void ComponentEvaluatorsEntry_Type::
-evaluator (::std::auto_ptr< evaluator_type > x)
+evaluator (::std::unique_ptr< evaluator_type > x)
 {
-  this->evaluator_.set (x);
+  this->evaluator_.set (std::move (x));
 }
 
 
@@ -934,9 +934,9 @@ default_ (const default_optional& x)
 }
 
 void ComponentEvaluators_Type::
-default_ (::std::auto_ptr< default_type > x)
+default_ (::std::unique_ptr< default_type > x)
 {
-  this->default__.set (x);
+  this->default__.set (std::move (x));
 }
 
 
@@ -962,9 +962,9 @@ evaluator (const evaluator_type& x)
 }
 
 void ShapeMap_Type::
-evaluator (::std::auto_ptr< evaluator_type > x)
+evaluator (::std::unique_ptr< evaluator_type > x)
 {
-  this->evaluator_.set (x);
+  this->evaluator_.set (std::move (x));
 }
 
 
@@ -990,9 +990,9 @@ name (const name_type& x)
 }
 
 void ArgumentListEntry_Type::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 
@@ -1040,9 +1040,9 @@ evaluator (const evaluator_type& x)
 }
 
 void EvaluatorListEntry_Type::
-evaluator (::std::auto_ptr< evaluator_type > x)
+evaluator (::std::unique_ptr< evaluator_type > x)
 {
-  this->evaluator_.set (x);
+  this->evaluator_.set (std::move (x));
 }
 
 
@@ -1090,9 +1090,9 @@ evaluator (const evaluator_type& x)
 }
 
 void OrderedEvaluatorListEntry_Type::
-evaluator (::std::auto_ptr< evaluator_type > x)
+evaluator (::std::unique_ptr< evaluator_type > x)
 {
-  this->evaluator_.set (x);
+  this->evaluator_.set (std::move (x));
 }
 
 const OrderedEvaluatorListEntry_Type::order_optional& OrderedEvaluatorListEntry_Type::
@@ -1120,9 +1120,9 @@ order (const order_optional& x)
 }
 
 void OrderedEvaluatorListEntry_Type::
-order (::std::auto_ptr< order_type > x)
+order (::std::unique_ptr< order_type > x)
 {
-  this->order_.set (x);
+  this->order_.set (std::move (x));
 }
 
 
@@ -1252,9 +1252,9 @@ data (const data_type& x)
 }
 
 void MemberData_Type::
-data (::std::auto_ptr< data_type > x)
+data (::std::unique_ptr< data_type > x)
 {
-  this->data_.set (x);
+  this->data_.set (std::move (x));
 }
 
 
@@ -1286,9 +1286,9 @@ MemberListData (const MemberListData_optional& x)
 }
 
 void EnsembleMembers_Type::
-MemberListData (::std::auto_ptr< MemberListData_type > x)
+MemberListData (::std::unique_ptr< MemberListData_type > x)
 {
-  this->MemberListData_.set (x);
+  this->MemberListData_.set (std::move (x));
 }
 
 const EnsembleMembers_Type::MemberRangeData_optional& EnsembleMembers_Type::
@@ -1316,9 +1316,9 @@ MemberRangeData (const MemberRangeData_optional& x)
 }
 
 void EnsembleMembers_Type::
-MemberRangeData (::std::auto_ptr< MemberRangeData_type > x)
+MemberRangeData (::std::unique_ptr< MemberRangeData_type > x)
 {
-  this->MemberRangeData_.set (x);
+  this->MemberRangeData_.set (std::move (x));
 }
 
 const EnsembleMembers_Type::MemberStrideRangeData_optional& EnsembleMembers_Type::
@@ -1346,9 +1346,9 @@ MemberStrideRangeData (const MemberStrideRangeData_optional& x)
 }
 
 void EnsembleMembers_Type::
-MemberStrideRangeData (::std::auto_ptr< MemberStrideRangeData_type > x)
+MemberStrideRangeData (::std::unique_ptr< MemberStrideRangeData_type > x)
 {
-  this->MemberStrideRangeData_.set (x);
+  this->MemberStrideRangeData_.set (std::move (x));
 }
 
 const EnsembleMembers_Type::MemberRange_optional& EnsembleMembers_Type::
@@ -1376,9 +1376,9 @@ MemberRange (const MemberRange_optional& x)
 }
 
 void EnsembleMembers_Type::
-MemberRange (::std::auto_ptr< MemberRange_type > x)
+MemberRange (::std::unique_ptr< MemberRange_type > x)
 {
-  this->MemberRange_.set (x);
+  this->MemberRange_.set (std::move (x));
 }
 
 
@@ -1408,9 +1408,9 @@ Members (const Members_type& x)
 }
 
 void EnsembleType_Type::
-Members (::std::auto_ptr< Members_type > x)
+Members (::std::unique_ptr< Members_type > x)
 {
-  this->Members_.set (x);
+  this->Members_.set (std::move (x));
 }
 
 
@@ -1436,9 +1436,9 @@ name (const name_type& x)
 }
 
 void ContinuousComponent_Type::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 const ContinuousComponent_Type::count_type& ContinuousComponent_Type::
@@ -1488,9 +1488,9 @@ Components (const Components_optional& x)
 }
 
 void ContinuousType_Type::
-Components (::std::auto_ptr< Components_type > x)
+Components (::std::unique_ptr< Components_type > x)
 {
-  this->Components_.set (x);
+  this->Components_.set (std::move (x));
 }
 
 
@@ -1516,9 +1516,9 @@ Elements (const Elements_type& x)
 }
 
 void MeshType_Type::
-Elements (::std::auto_ptr< Elements_type > x)
+Elements (::std::unique_ptr< Elements_type > x)
 {
-  this->Elements_.set (x);
+  this->Elements_.set (std::move (x));
 }
 
 const MeshType_Type::Chart_type& MeshType_Type::
@@ -1540,9 +1540,9 @@ Chart (const Chart_type& x)
 }
 
 void MeshType_Type::
-Chart (::std::auto_ptr< Chart_type > x)
+Chart (::std::unique_ptr< Chart_type > x)
 {
-  this->Chart_.set (x);
+  this->Chart_.set (std::move (x));
 }
 
 const MeshType_Type::Shapes_type& MeshType_Type::
@@ -1564,9 +1564,9 @@ Shapes (const Shapes_type& x)
 }
 
 void MeshType_Type::
-Shapes (::std::auto_ptr< Shapes_type > x)
+Shapes (::std::unique_ptr< Shapes_type > x)
 {
-  this->Shapes_.set (x);
+  this->Shapes_.set (std::move (x));
 }
 
 
@@ -1598,9 +1598,9 @@ Arguments (const Arguments_optional& x)
 }
 
 void FieldmlEvaluator_Type::
-Arguments (::std::auto_ptr< Arguments_type > x)
+Arguments (::std::unique_ptr< Arguments_type > x)
 {
-  this->Arguments_.set (x);
+  this->Arguments_.set (std::move (x));
 }
 
 const FieldmlEvaluator_Type::valueType_type& FieldmlEvaluator_Type::
@@ -1622,9 +1622,9 @@ valueType (const valueType_type& x)
 }
 
 void FieldmlEvaluator_Type::
-valueType (::std::auto_ptr< valueType_type > x)
+valueType (::std::unique_ptr< valueType_type > x)
 {
-  this->valueType_.set (x);
+  this->valueType_.set (std::move (x));
 }
 
 
@@ -1658,9 +1658,9 @@ value (const value_type& x)
 }
 
 void ConstantEvaluator_Type::
-value (::std::auto_ptr< value_type > x)
+value (::std::unique_ptr< value_type > x)
 {
-  this->value_.set (x);
+  this->value_.set (std::move (x));
 }
 
 const ConstantEvaluator_Type::valueType_type& ConstantEvaluator_Type::
@@ -1682,9 +1682,9 @@ valueType (const valueType_type& x)
 }
 
 void ConstantEvaluator_Type::
-valueType (::std::auto_ptr< valueType_type > x)
+valueType (::std::unique_ptr< valueType_type > x)
 {
-  this->valueType_.set (x);
+  this->valueType_.set (std::move (x));
 }
 
 
@@ -1716,9 +1716,9 @@ Arguments (const Arguments_optional& x)
 }
 
 void ReferenceEvaluator_Type::
-Arguments (::std::auto_ptr< Arguments_type > x)
+Arguments (::std::unique_ptr< Arguments_type > x)
 {
-  this->Arguments_.set (x);
+  this->Arguments_.set (std::move (x));
 }
 
 const ReferenceEvaluator_Type::Bindings_optional& ReferenceEvaluator_Type::
@@ -1746,9 +1746,9 @@ Bindings (const Bindings_optional& x)
 }
 
 void ReferenceEvaluator_Type::
-Bindings (::std::auto_ptr< Bindings_type > x)
+Bindings (::std::unique_ptr< Bindings_type > x)
 {
-  this->Bindings_.set (x);
+  this->Bindings_.set (std::move (x));
 }
 
 const ReferenceEvaluator_Type::valueType_optional& ReferenceEvaluator_Type::
@@ -1776,9 +1776,9 @@ valueType (const valueType_optional& x)
 }
 
 void ReferenceEvaluator_Type::
-valueType (::std::auto_ptr< valueType_type > x)
+valueType (::std::unique_ptr< valueType_type > x)
 {
-  this->valueType_.set (x);
+  this->valueType_.set (std::move (x));
 }
 
 const ReferenceEvaluator_Type::evaluator_type& ReferenceEvaluator_Type::
@@ -1800,9 +1800,9 @@ evaluator (const evaluator_type& x)
 }
 
 void ReferenceEvaluator_Type::
-evaluator (::std::auto_ptr< evaluator_type > x)
+evaluator (::std::unique_ptr< evaluator_type > x)
 {
-  this->evaluator_.set (x);
+  this->evaluator_.set (std::move (x));
 }
 
 
@@ -1846,9 +1846,9 @@ evaluator (const evaluator_type& x)
 }
 
 void EvaluatorMapEntry_Type::
-evaluator (::std::auto_ptr< evaluator_type > x)
+evaluator (::std::unique_ptr< evaluator_type > x)
 {
-  this->evaluator_.set (x);
+  this->evaluator_.set (std::move (x));
 }
 
 
@@ -1898,9 +1898,9 @@ default_ (const default_optional& x)
 }
 
 void EvaluatorMap_Type::
-default_ (::std::auto_ptr< default_type > x)
+default_ (::std::unique_ptr< default_type > x)
 {
-  this->default__.set (x);
+  this->default__.set (std::move (x));
 }
 
 
@@ -1932,9 +1932,9 @@ Bindings (const Bindings_optional& x)
 }
 
 void PiecewiseEvaluator_Type::
-Bindings (::std::auto_ptr< Bindings_type > x)
+Bindings (::std::unique_ptr< Bindings_type > x)
 {
-  this->Bindings_.set (x);
+  this->Bindings_.set (std::move (x));
 }
 
 const PiecewiseEvaluator_Type::IndexEvaluators_optional& PiecewiseEvaluator_Type::
@@ -1962,9 +1962,9 @@ IndexEvaluators (const IndexEvaluators_optional& x)
 }
 
 void PiecewiseEvaluator_Type::
-IndexEvaluators (::std::auto_ptr< IndexEvaluators_type > x)
+IndexEvaluators (::std::unique_ptr< IndexEvaluators_type > x)
 {
-  this->IndexEvaluators_.set (x);
+  this->IndexEvaluators_.set (std::move (x));
 }
 
 const PiecewiseEvaluator_Type::EvaluatorMap_type& PiecewiseEvaluator_Type::
@@ -1986,9 +1986,9 @@ EvaluatorMap (const EvaluatorMap_type& x)
 }
 
 void PiecewiseEvaluator_Type::
-EvaluatorMap (::std::auto_ptr< EvaluatorMap_type > x)
+EvaluatorMap (::std::unique_ptr< EvaluatorMap_type > x)
 {
-  this->EvaluatorMap_.set (x);
+  this->EvaluatorMap_.set (std::move (x));
 }
 
 
@@ -2020,9 +2020,9 @@ DenseIndexes (const DenseIndexes_optional& x)
 }
 
 void DenseArrayData_Type::
-DenseIndexes (::std::auto_ptr< DenseIndexes_type > x)
+DenseIndexes (::std::unique_ptr< DenseIndexes_type > x)
 {
-  this->DenseIndexes_.set (x);
+  this->DenseIndexes_.set (std::move (x));
 }
 
 const DenseArrayData_Type::data_type& DenseArrayData_Type::
@@ -2044,9 +2044,9 @@ data (const data_type& x)
 }
 
 void DenseArrayData_Type::
-data (::std::auto_ptr< data_type > x)
+data (::std::unique_ptr< data_type > x)
 {
-  this->data_.set (x);
+  this->data_.set (std::move (x));
 }
 
 
@@ -2078,9 +2078,9 @@ DenseIndexes (const DenseIndexes_optional& x)
 }
 
 void DOKArrayData_Type::
-DenseIndexes (::std::auto_ptr< DenseIndexes_type > x)
+DenseIndexes (::std::unique_ptr< DenseIndexes_type > x)
 {
-  this->DenseIndexes_.set (x);
+  this->DenseIndexes_.set (std::move (x));
 }
 
 const DOKArrayData_Type::SparseIndexes_type& DOKArrayData_Type::
@@ -2102,9 +2102,9 @@ SparseIndexes (const SparseIndexes_type& x)
 }
 
 void DOKArrayData_Type::
-SparseIndexes (::std::auto_ptr< SparseIndexes_type > x)
+SparseIndexes (::std::unique_ptr< SparseIndexes_type > x)
 {
-  this->SparseIndexes_.set (x);
+  this->SparseIndexes_.set (std::move (x));
 }
 
 const DOKArrayData_Type::keyData_type& DOKArrayData_Type::
@@ -2126,9 +2126,9 @@ keyData (const keyData_type& x)
 }
 
 void DOKArrayData_Type::
-keyData (::std::auto_ptr< keyData_type > x)
+keyData (::std::unique_ptr< keyData_type > x)
 {
-  this->keyData_.set (x);
+  this->keyData_.set (std::move (x));
 }
 
 const DOKArrayData_Type::valueData_type& DOKArrayData_Type::
@@ -2150,9 +2150,9 @@ valueData (const valueData_type& x)
 }
 
 void DOKArrayData_Type::
-valueData (::std::auto_ptr< valueData_type > x)
+valueData (::std::unique_ptr< valueData_type > x)
 {
-  this->valueData_.set (x);
+  this->valueData_.set (std::move (x));
 }
 
 
@@ -2184,9 +2184,9 @@ DenseArrayData (const DenseArrayData_optional& x)
 }
 
 void ParameterEvaluator_Type::
-DenseArrayData (::std::auto_ptr< DenseArrayData_type > x)
+DenseArrayData (::std::unique_ptr< DenseArrayData_type > x)
 {
-  this->DenseArrayData_.set (x);
+  this->DenseArrayData_.set (std::move (x));
 }
 
 const ParameterEvaluator_Type::DOKArrayData_optional& ParameterEvaluator_Type::
@@ -2214,9 +2214,9 @@ DOKArrayData (const DOKArrayData_optional& x)
 }
 
 void ParameterEvaluator_Type::
-DOKArrayData (::std::auto_ptr< DOKArrayData_type > x)
+DOKArrayData (::std::unique_ptr< DOKArrayData_type > x)
 {
-  this->DOKArrayData_.set (x);
+  this->DOKArrayData_.set (std::move (x));
 }
 
 
@@ -2248,9 +2248,9 @@ Bindings (const Bindings_optional& x)
 }
 
 void AggregateEvaluator_Type::
-Bindings (::std::auto_ptr< Bindings_type > x)
+Bindings (::std::unique_ptr< Bindings_type > x)
 {
-  this->Bindings_.set (x);
+  this->Bindings_.set (std::move (x));
 }
 
 const AggregateEvaluator_Type::ComponentEvaluators_type& AggregateEvaluator_Type::
@@ -2272,9 +2272,9 @@ ComponentEvaluators (const ComponentEvaluators_type& x)
 }
 
 void AggregateEvaluator_Type::
-ComponentEvaluators (::std::auto_ptr< ComponentEvaluators_type > x)
+ComponentEvaluators (::std::unique_ptr< ComponentEvaluators_type > x)
 {
-  this->ComponentEvaluators_.set (x);
+  this->ComponentEvaluators_.set (std::move (x));
 }
 
 
@@ -2534,9 +2534,9 @@ name (const name_type& x)
 }
 
 void Region_Type::
-name (::std::auto_ptr< name_type > x)
+name (::std::unique_ptr< name_type > x)
 {
-  this->name_.set (x);
+  this->name_.set (std::move (x));
 }
 
 
@@ -2562,9 +2562,9 @@ Region (const Region_type& x)
 }
 
 void Fieldml_Type::
-Region (::std::auto_ptr< Region_type > x)
+Region (::std::unique_ptr< Region_type > x)
 {
-  this->Region_.set (x);
+  this->Region_.set (std::move (x));
 }
 
 const Fieldml_Type::version_optional& Fieldml_Type::
@@ -2592,9 +2592,9 @@ version (const version_optional& x)
 }
 
 void Fieldml_Type::
-version (::std::auto_ptr< version_type > x)
+version (::std::unique_ptr< version_type > x)
 {
-  this->version_.set (x);
+  this->version_.set (std::move (x));
 }
 
 
@@ -3041,10 +3041,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ArrayDataSize" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ArrayDataSize_type > r (
+      ::std::unique_ptr< ArrayDataSize_type > r (
         ArrayDataSize_traits::create (i, f, this));
 
-      this->ArrayDataSize_.push_back (r);
+      this->ArrayDataSize_.push_back (::std::move (r));
       continue;
     }
 
@@ -3052,10 +3052,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ArrayDataOffset" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ArrayDataOffset_type > r (
+      ::std::unique_ptr< ArrayDataOffset_type > r (
         ArrayDataOffset_traits::create (i, f, this));
 
-      this->ArrayDataOffset_.push_back (r);
+      this->ArrayDataOffset_.push_back (::std::move (r));
       continue;
     }
 
@@ -3063,10 +3063,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "RawArraySize" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< RawArraySize_type > r (
+      ::std::unique_ptr< RawArraySize_type > r (
         RawArraySize_traits::create (i, f, this));
 
-      this->RawArraySize_.push_back (r);
+      this->RawArraySize_.push_back (::std::move (r));
       continue;
     }
 
@@ -3371,12 +3371,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "DataResourceHref" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< DataResourceHref_type > r (
+      ::std::unique_ptr< DataResourceHref_type > r (
         DataResourceHref_traits::create (i, f, this));
 
       if (!this->DataResourceHref_)
       {
-        this->DataResourceHref_.set (r);
+        this->DataResourceHref_.set (::std::move (r));
         continue;
       }
     }
@@ -3385,12 +3385,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "DataResourceString" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< DataResourceString_type > r (
+      ::std::unique_ptr< DataResourceString_type > r (
         DataResourceString_traits::create (i, f, this));
 
       if (!this->DataResourceString_)
       {
-        this->DataResourceString_.set (r);
+        this->DataResourceString_.set (::std::move (r));
         continue;
       }
     }
@@ -3477,10 +3477,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "DataResourceDescription" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< DataResourceDescription_type > r (
+      ::std::unique_ptr< DataResourceDescription_type > r (
         DataResourceDescription_traits::create (i, f, this));
 
-      this->DataResourceDescription_.push_back (r);
+      this->DataResourceDescription_.push_back (::std::move (r));
       continue;
     }
 
@@ -3488,10 +3488,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ArrayDataSource" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ArrayDataSource_type > r (
+      ::std::unique_ptr< ArrayDataSource_type > r (
         ArrayDataSource_traits::create (i, f, this));
 
-      this->ArrayDataSource_.push_back (r);
+      this->ArrayDataSource_.push_back (::std::move (r));
       continue;
     }
 
@@ -3802,10 +3802,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ImportType" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ImportType_type > r (
+      ::std::unique_ptr< ImportType_type > r (
         ImportType_traits::create (i, f, this));
 
-      this->ImportType_.push_back (r);
+      this->ImportType_.push_back (::std::move (r));
       continue;
     }
 
@@ -3813,10 +3813,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ImportEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ImportEvaluator_type > r (
+      ::std::unique_ptr< ImportEvaluator_type > r (
         ImportEvaluator_traits::create (i, f, this));
 
-      this->ImportEvaluator_.push_back (r);
+      this->ImportEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -4031,10 +4031,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "IndexEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< IndexEvaluator_type > r (
+      ::std::unique_ptr< IndexEvaluator_type > r (
         IndexEvaluator_traits::create (i, f, this));
 
-      this->IndexEvaluator_.push_back (r);
+      this->IndexEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -4316,10 +4316,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "BindIndex" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< BindIndex_type > r (
+      ::std::unique_ptr< BindIndex_type > r (
         BindIndex_traits::create (i, f, this));
 
-      this->BindIndex_.push_back (r);
+      this->BindIndex_.push_back (::std::move (r));
       continue;
     }
 
@@ -4327,10 +4327,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Bind" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Bind_type > r (
+      ::std::unique_ptr< Bind_type > r (
         Bind_traits::create (i, f, this));
 
-      this->Bind_.push_back (r);
+      this->Bind_.push_back (::std::move (r));
       continue;
     }
 
@@ -4410,10 +4410,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Bind" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Bind_type > r (
+      ::std::unique_ptr< Bind_type > r (
         Bind_traits::create (i, f, this));
 
-      this->Bind_.push_back (r);
+      this->Bind_.push_back (::std::move (r));
       continue;
     }
 
@@ -4595,10 +4595,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ComponentEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ComponentEvaluator_type > r (
+      ::std::unique_ptr< ComponentEvaluator_type > r (
         ComponentEvaluator_traits::create (i, f, this));
 
-      this->ComponentEvaluator_.push_back (r);
+      this->ComponentEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -4855,10 +4855,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Argument" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Argument_type > r (
+      ::std::unique_ptr< Argument_type > r (
         Argument_traits::create (i, f, this));
 
-      this->Argument_.push_back (r);
+      this->Argument_.push_back (::std::move (r));
       continue;
     }
 
@@ -5019,10 +5019,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "IndexEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< IndexEvaluator_type > r (
+      ::std::unique_ptr< IndexEvaluator_type > r (
         IndexEvaluator_traits::create (i, f, this));
 
-      this->IndexEvaluator_.push_back (r);
+      this->IndexEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -5193,10 +5193,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "IndexEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< IndexEvaluator_type > r (
+      ::std::unique_ptr< IndexEvaluator_type > r (
         IndexEvaluator_traits::create (i, f, this));
 
-      this->IndexEvaluator_.push_back (r);
+      this->IndexEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -5494,12 +5494,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "MemberListData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< MemberListData_type > r (
+      ::std::unique_ptr< MemberListData_type > r (
         MemberListData_traits::create (i, f, this));
 
       if (!this->MemberListData_)
       {
-        this->MemberListData_.set (r);
+        this->MemberListData_.set (::std::move (r));
         continue;
       }
     }
@@ -5508,12 +5508,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "MemberRangeData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< MemberRangeData_type > r (
+      ::std::unique_ptr< MemberRangeData_type > r (
         MemberRangeData_traits::create (i, f, this));
 
       if (!this->MemberRangeData_)
       {
-        this->MemberRangeData_.set (r);
+        this->MemberRangeData_.set (::std::move (r));
         continue;
       }
     }
@@ -5522,12 +5522,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "MemberStrideRangeData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< MemberStrideRangeData_type > r (
+      ::std::unique_ptr< MemberStrideRangeData_type > r (
         MemberStrideRangeData_traits::create (i, f, this));
 
       if (!this->MemberStrideRangeData_)
       {
-        this->MemberStrideRangeData_.set (r);
+        this->MemberStrideRangeData_.set (::std::move (r));
         continue;
       }
     }
@@ -5536,12 +5536,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "MemberRange" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< MemberRange_type > r (
+      ::std::unique_ptr< MemberRange_type > r (
         MemberRange_traits::create (i, f, this));
 
       if (!this->MemberRange_)
       {
-        this->MemberRange_.set (r);
+        this->MemberRange_.set (::std::move (r));
         continue;
       }
     }
@@ -5627,9 +5627,9 @@ EnsembleType_Type (const name_type& name,
 
 EnsembleType_Type::
 EnsembleType_Type (const name_type& name,
-                   ::std::auto_ptr< Members_type > Members)
+                   ::std::unique_ptr< Members_type > Members)
 : ::FieldmlObject_Type (name),
-  Members_ (Members, this)
+  Members_ (std::move (Members), this)
 {
 }
 
@@ -5672,12 +5672,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Members" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Members_type > r (
+      ::std::unique_ptr< Members_type > r (
         Members_traits::create (i, f, this));
 
       if (!Members_.present ())
       {
-        this->Members_.set (r);
+        this->Members_.set (::std::move (r));
         continue;
       }
     }
@@ -5866,12 +5866,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Components" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Components_type > r (
+      ::std::unique_ptr< Components_type > r (
         Components_traits::create (i, f, this));
 
       if (!this->Components_)
       {
-        this->Components_.set (r);
+        this->Components_.set (::std::move (r));
         continue;
       }
     }
@@ -5921,13 +5921,13 @@ MeshType_Type (const name_type& name,
 
 MeshType_Type::
 MeshType_Type (const name_type& name,
-               ::std::auto_ptr< Elements_type > Elements,
-               ::std::auto_ptr< Chart_type > Chart,
-               ::std::auto_ptr< Shapes_type > Shapes)
+               ::std::unique_ptr< Elements_type > Elements,
+               ::std::unique_ptr< Chart_type > Chart,
+               ::std::unique_ptr< Shapes_type > Shapes)
 : ::FieldmlObject_Type (name),
-  Elements_ (Elements, this),
-  Chart_ (Chart, this),
-  Shapes_ (Shapes, this)
+  Elements_ (std::move (Elements), this),
+  Chart_ (std::move (Chart), this),
+  Shapes_ (std::move (Shapes), this)
 {
 }
 
@@ -5974,12 +5974,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Elements" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Elements_type > r (
+      ::std::unique_ptr< Elements_type > r (
         Elements_traits::create (i, f, this));
 
       if (!Elements_.present ())
       {
-        this->Elements_.set (r);
+        this->Elements_.set (::std::move (r));
         continue;
       }
     }
@@ -5988,12 +5988,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Chart" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Chart_type > r (
+      ::std::unique_ptr< Chart_type > r (
         Chart_traits::create (i, f, this));
 
       if (!Chart_.present ())
       {
-        this->Chart_.set (r);
+        this->Chart_.set (::std::move (r));
         continue;
       }
     }
@@ -6002,12 +6002,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Shapes" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Shapes_type > r (
+      ::std::unique_ptr< Shapes_type > r (
         Shapes_traits::create (i, f, this));
 
       if (!Shapes_.present ())
       {
-        this->Shapes_.set (r);
+        this->Shapes_.set (::std::move (r));
         continue;
       }
     }
@@ -6116,12 +6116,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Arguments" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Arguments_type > r (
+      ::std::unique_ptr< Arguments_type > r (
         Arguments_traits::create (i, f, this));
 
       if (!this->Arguments_)
       {
-        this->Arguments_.set (r);
+        this->Arguments_.set (::std::move (r));
         continue;
       }
     }
@@ -6419,12 +6419,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Arguments" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Arguments_type > r (
+      ::std::unique_ptr< Arguments_type > r (
         Arguments_traits::create (i, f, this));
 
       if (!this->Arguments_)
       {
-        this->Arguments_.set (r);
+        this->Arguments_.set (::std::move (r));
         continue;
       }
     }
@@ -6433,12 +6433,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Bindings" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Bindings_type > r (
+      ::std::unique_ptr< Bindings_type > r (
         Bindings_traits::create (i, f, this));
 
       if (!this->Bindings_)
       {
-        this->Bindings_.set (r);
+        this->Bindings_.set (::std::move (r));
         continue;
       }
     }
@@ -6652,10 +6652,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "EvaluatorMapEntry" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< EvaluatorMapEntry_type > r (
+      ::std::unique_ptr< EvaluatorMapEntry_type > r (
         EvaluatorMapEntry_traits::create (i, f, this));
 
-      this->EvaluatorMapEntry_.push_back (r);
+      this->EvaluatorMapEntry_.push_back (::std::move (r));
       continue;
     }
 
@@ -6719,12 +6719,12 @@ PiecewiseEvaluator_Type (const name_type& name,
 PiecewiseEvaluator_Type::
 PiecewiseEvaluator_Type (const name_type& name,
                          const valueType_type& valueType,
-                         ::std::auto_ptr< EvaluatorMap_type > EvaluatorMap)
+                         ::std::unique_ptr< EvaluatorMap_type > EvaluatorMap)
 : ::FieldmlEvaluator_Type (name,
                            valueType),
   Bindings_ (this),
   IndexEvaluators_ (this),
-  EvaluatorMap_ (EvaluatorMap, this)
+  EvaluatorMap_ (std::move (EvaluatorMap), this)
 {
 }
 
@@ -6771,12 +6771,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Bindings" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Bindings_type > r (
+      ::std::unique_ptr< Bindings_type > r (
         Bindings_traits::create (i, f, this));
 
       if (!this->Bindings_)
       {
-        this->Bindings_.set (r);
+        this->Bindings_.set (::std::move (r));
         continue;
       }
     }
@@ -6785,12 +6785,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "IndexEvaluators" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< IndexEvaluators_type > r (
+      ::std::unique_ptr< IndexEvaluators_type > r (
         IndexEvaluators_traits::create (i, f, this));
 
       if (!this->IndexEvaluators_)
       {
-        this->IndexEvaluators_.set (r);
+        this->IndexEvaluators_.set (::std::move (r));
         continue;
       }
     }
@@ -6799,12 +6799,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "EvaluatorMap" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< EvaluatorMap_type > r (
+      ::std::unique_ptr< EvaluatorMap_type > r (
         EvaluatorMap_traits::create (i, f, this));
 
       if (!EvaluatorMap_.present ())
       {
-        this->EvaluatorMap_.set (r);
+        this->EvaluatorMap_.set (::std::move (r));
         continue;
       }
     }
@@ -6896,12 +6896,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "DenseIndexes" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< DenseIndexes_type > r (
+      ::std::unique_ptr< DenseIndexes_type > r (
         DenseIndexes_traits::create (i, f, this));
 
       if (!this->DenseIndexes_)
       {
-        this->DenseIndexes_.set (r);
+        this->DenseIndexes_.set (::std::move (r));
         continue;
       }
     }
@@ -6971,12 +6971,12 @@ DOKArrayData_Type (const SparseIndexes_type& SparseIndexes,
 }
 
 DOKArrayData_Type::
-DOKArrayData_Type (::std::auto_ptr< SparseIndexes_type > SparseIndexes,
+DOKArrayData_Type (::std::unique_ptr< SparseIndexes_type > SparseIndexes,
                    const keyData_type& keyData,
                    const valueData_type& valueData)
 : ::xml_schema::type (),
   DenseIndexes_ (this),
-  SparseIndexes_ (SparseIndexes, this),
+  SparseIndexes_ (std::move (SparseIndexes), this),
   keyData_ (keyData, this),
   valueData_ (valueData, this)
 {
@@ -7025,12 +7025,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "DenseIndexes" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< DenseIndexes_type > r (
+      ::std::unique_ptr< DenseIndexes_type > r (
         DenseIndexes_traits::create (i, f, this));
 
       if (!this->DenseIndexes_)
       {
-        this->DenseIndexes_.set (r);
+        this->DenseIndexes_.set (::std::move (r));
         continue;
       }
     }
@@ -7039,12 +7039,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "SparseIndexes" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< SparseIndexes_type > r (
+      ::std::unique_ptr< SparseIndexes_type > r (
         SparseIndexes_traits::create (i, f, this));
 
       if (!SparseIndexes_.present ())
       {
-        this->SparseIndexes_.set (r);
+        this->SparseIndexes_.set (::std::move (r));
         continue;
       }
     }
@@ -7174,12 +7174,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "DenseArrayData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< DenseArrayData_type > r (
+      ::std::unique_ptr< DenseArrayData_type > r (
         DenseArrayData_traits::create (i, f, this));
 
       if (!this->DenseArrayData_)
       {
-        this->DenseArrayData_.set (r);
+        this->DenseArrayData_.set (::std::move (r));
         continue;
       }
     }
@@ -7188,12 +7188,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "DOKArrayData" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< DOKArrayData_type > r (
+      ::std::unique_ptr< DOKArrayData_type > r (
         DOKArrayData_traits::create (i, f, this));
 
       if (!this->DOKArrayData_)
       {
-        this->DOKArrayData_.set (r);
+        this->DOKArrayData_.set (::std::move (r));
         continue;
       }
     }
@@ -7244,11 +7244,11 @@ AggregateEvaluator_Type (const name_type& name,
 AggregateEvaluator_Type::
 AggregateEvaluator_Type (const name_type& name,
                          const valueType_type& valueType,
-                         ::std::auto_ptr< ComponentEvaluators_type > ComponentEvaluators)
+                         ::std::unique_ptr< ComponentEvaluators_type > ComponentEvaluators)
 : ::FieldmlEvaluator_Type (name,
                            valueType),
   Bindings_ (this),
-  ComponentEvaluators_ (ComponentEvaluators, this)
+  ComponentEvaluators_ (std::move (ComponentEvaluators), this)
 {
 }
 
@@ -7293,12 +7293,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Bindings" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Bindings_type > r (
+      ::std::unique_ptr< Bindings_type > r (
         Bindings_traits::create (i, f, this));
 
       if (!this->Bindings_)
       {
-        this->Bindings_.set (r);
+        this->Bindings_.set (::std::move (r));
         continue;
       }
     }
@@ -7307,12 +7307,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ComponentEvaluators" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ComponentEvaluators_type > r (
+      ::std::unique_ptr< ComponentEvaluators_type > r (
         ComponentEvaluators_traits::create (i, f, this));
 
       if (!ComponentEvaluators_.present ())
       {
-        this->ComponentEvaluators_.set (r);
+        this->ComponentEvaluators_.set (::std::move (r));
         continue;
       }
     }
@@ -7441,10 +7441,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Import" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Import_type > r (
+      ::std::unique_ptr< Import_type > r (
         Import_traits::create (i, f, this));
 
-      this->Import_.push_back (r);
+      this->Import_.push_back (::std::move (r));
       continue;
     }
 
@@ -7452,10 +7452,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "DataResource" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< DataResource_type > r (
+      ::std::unique_ptr< DataResource_type > r (
         DataResource_traits::create (i, f, this));
 
-      this->DataResource_.push_back (r);
+      this->DataResource_.push_back (::std::move (r));
       continue;
     }
 
@@ -7463,10 +7463,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "BooleanType" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< BooleanType_type > r (
+      ::std::unique_ptr< BooleanType_type > r (
         BooleanType_traits::create (i, f, this));
 
-      this->BooleanType_.push_back (r);
+      this->BooleanType_.push_back (::std::move (r));
       continue;
     }
 
@@ -7474,10 +7474,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "EnsembleType" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< EnsembleType_type > r (
+      ::std::unique_ptr< EnsembleType_type > r (
         EnsembleType_traits::create (i, f, this));
 
-      this->EnsembleType_.push_back (r);
+      this->EnsembleType_.push_back (::std::move (r));
       continue;
     }
 
@@ -7485,10 +7485,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ContinuousType" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ContinuousType_type > r (
+      ::std::unique_ptr< ContinuousType_type > r (
         ContinuousType_traits::create (i, f, this));
 
-      this->ContinuousType_.push_back (r);
+      this->ContinuousType_.push_back (::std::move (r));
       continue;
     }
 
@@ -7496,10 +7496,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "MeshType" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< MeshType_type > r (
+      ::std::unique_ptr< MeshType_type > r (
         MeshType_traits::create (i, f, this));
 
-      this->MeshType_.push_back (r);
+      this->MeshType_.push_back (::std::move (r));
       continue;
     }
 
@@ -7507,10 +7507,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ArgumentEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ArgumentEvaluator_type > r (
+      ::std::unique_ptr< ArgumentEvaluator_type > r (
         ArgumentEvaluator_traits::create (i, f, this));
 
-      this->ArgumentEvaluator_.push_back (r);
+      this->ArgumentEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -7518,10 +7518,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ExternalEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ExternalEvaluator_type > r (
+      ::std::unique_ptr< ExternalEvaluator_type > r (
         ExternalEvaluator_traits::create (i, f, this));
 
-      this->ExternalEvaluator_.push_back (r);
+      this->ExternalEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -7529,10 +7529,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ReferenceEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ReferenceEvaluator_type > r (
+      ::std::unique_ptr< ReferenceEvaluator_type > r (
         ReferenceEvaluator_traits::create (i, f, this));
 
-      this->ReferenceEvaluator_.push_back (r);
+      this->ReferenceEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -7540,10 +7540,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ConstantEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ConstantEvaluator_type > r (
+      ::std::unique_ptr< ConstantEvaluator_type > r (
         ConstantEvaluator_traits::create (i, f, this));
 
-      this->ConstantEvaluator_.push_back (r);
+      this->ConstantEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -7551,10 +7551,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "PiecewiseEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< PiecewiseEvaluator_type > r (
+      ::std::unique_ptr< PiecewiseEvaluator_type > r (
         PiecewiseEvaluator_traits::create (i, f, this));
 
-      this->PiecewiseEvaluator_.push_back (r);
+      this->PiecewiseEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -7562,10 +7562,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "ParameterEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< ParameterEvaluator_type > r (
+      ::std::unique_ptr< ParameterEvaluator_type > r (
         ParameterEvaluator_traits::create (i, f, this));
 
-      this->ParameterEvaluator_.push_back (r);
+      this->ParameterEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -7573,10 +7573,10 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "AggregateEvaluator" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< AggregateEvaluator_type > r (
+      ::std::unique_ptr< AggregateEvaluator_type > r (
         AggregateEvaluator_traits::create (i, f, this));
 
-      this->AggregateEvaluator_.push_back (r);
+      this->AggregateEvaluator_.push_back (::std::move (r));
       continue;
     }
 
@@ -7655,9 +7655,9 @@ Fieldml_Type (const Region_type& Region)
 }
 
 Fieldml_Type::
-Fieldml_Type (::std::auto_ptr< Region_type > Region)
+Fieldml_Type (::std::unique_ptr< Region_type > Region)
 : ::FieldmlRdfTargetType (),
-  Region_ (Region, this),
+  Region_ (std::move (Region), this),
   version_ (this)
 {
 }
@@ -7703,12 +7703,12 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     //
     if (n.name () == "Region" && n.namespace_ ().empty ())
     {
-      ::std::auto_ptr< Region_type > r (
+      ::std::unique_ptr< Region_type > r (
         Region_traits::create (i, f, this));
 
       if (!Region_.present ())
       {
-        this->Region_.set (r);
+        this->Region_.set (::std::move (r));
         continue;
       }
     }
@@ -7768,7 +7768,7 @@ Fieldml_Type::
 #include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (const ::std::string& u,
          ::xml_schema::flags f,
          const ::xml_schema::properties& p)
@@ -7779,18 +7779,18 @@ Fieldml (const ::std::string& u,
 
   ::xsd::cxx::tree::error_handler< char > h;
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
 
-  return ::std::auto_ptr< ::Fieldml_Type > (
+  return ::std::unique_ptr< ::Fieldml_Type > (
     ::Fieldml (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (const ::std::string& u,
          ::xml_schema::error_handler& h,
          ::xml_schema::flags f,
@@ -7800,37 +7800,37 @@ Fieldml (const ::std::string& u,
     (f & ::xml_schema::flags::dont_initialize) == 0,
     (f & ::xml_schema::flags::keep_dom) == 0);
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::Fieldml_Type > (
+  return ::std::unique_ptr< ::Fieldml_Type > (
     ::Fieldml (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (const ::std::string& u,
          ::xercesc::DOMErrorHandler& h,
          ::xml_schema::flags f,
          const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       u, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::Fieldml_Type > (
+  return ::std::unique_ptr< ::Fieldml_Type > (
     ::Fieldml (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          ::xml_schema::flags f,
          const ::xml_schema::properties& p)
@@ -7843,7 +7843,7 @@ Fieldml (::std::istream& is,
   return ::Fieldml (isrc, f, p);
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          ::xml_schema::error_handler& h,
          ::xml_schema::flags f,
@@ -7857,7 +7857,7 @@ Fieldml (::std::istream& is,
   return ::Fieldml (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          ::xercesc::DOMErrorHandler& h,
          ::xml_schema::flags f,
@@ -7867,7 +7867,7 @@ Fieldml (::std::istream& is,
   return ::Fieldml (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          const ::std::string& sid,
          ::xml_schema::flags f,
@@ -7881,7 +7881,7 @@ Fieldml (::std::istream& is,
   return ::Fieldml (isrc, f, p);
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          const ::std::string& sid,
          ::xml_schema::error_handler& h,
@@ -7896,7 +7896,7 @@ Fieldml (::std::istream& is,
   return ::Fieldml (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::std::istream& is,
          const ::std::string& sid,
          ::xercesc::DOMErrorHandler& h,
@@ -7907,73 +7907,73 @@ Fieldml (::std::istream& is,
   return ::Fieldml (isrc, h, f, p);
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::xercesc::InputSource& i,
          ::xml_schema::flags f,
          const ::xml_schema::properties& p)
 {
   ::xsd::cxx::tree::error_handler< char > h;
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
 
-  return ::std::auto_ptr< ::Fieldml_Type > (
+  return ::std::unique_ptr< ::Fieldml_Type > (
     ::Fieldml (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::xercesc::InputSource& i,
          ::xml_schema::error_handler& h,
          ::xml_schema::flags f,
          const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::Fieldml_Type > (
+  return ::std::unique_ptr< ::Fieldml_Type > (
     ::Fieldml (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (::xercesc::InputSource& i,
          ::xercesc::DOMErrorHandler& h,
          ::xml_schema::flags f,
          const ::xml_schema::properties& p)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
     ::xsd::cxx::xml::dom::parse< char > (
       i, h, p, f));
 
   if (!d.get ())
     throw ::xsd::cxx::tree::parsing< char > ();
 
-  return ::std::auto_ptr< ::Fieldml_Type > (
+  return ::std::unique_ptr< ::Fieldml_Type > (
     ::Fieldml (
-      d, f | ::xml_schema::flags::own_dom, p));
+      std::move (d), f | ::xml_schema::flags::own_dom, p));
 }
 
-::std::auto_ptr< ::Fieldml_Type >
+::std::unique_ptr< ::Fieldml_Type >
 Fieldml (const ::xercesc::DOMDocument& doc,
          ::xml_schema::flags f,
          const ::xml_schema::properties& p)
 {
   if (f & ::xml_schema::flags::keep_dom)
   {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
       static_cast< ::xercesc::DOMDocument* > (doc.cloneNode (true)));
 
-    return ::std::auto_ptr< ::Fieldml_Type > (
+    return ::std::unique_ptr< ::Fieldml_Type > (
       ::Fieldml (
-        d, f | ::xml_schema::flags::own_dom, p));
+        std::move (d), f | ::xml_schema::flags::own_dom, p));
   }
 
   const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
@@ -7983,7 +7983,7 @@ Fieldml (const ::xercesc::DOMDocument& doc,
   if (n.name () == "Fieldml" &&
       n.namespace_ () == "")
   {
-    ::std::auto_ptr< ::Fieldml_Type > r (
+    ::std::unique_ptr< ::Fieldml_Type > r (
       ::xsd::cxx::tree::traits< ::Fieldml_Type, char >::create (
         e, f, 0));
     return r;
@@ -7996,12 +7996,12 @@ Fieldml (const ::xercesc::DOMDocument& doc,
     "");
 }
 
-::std::auto_ptr< ::Fieldml_Type >
-Fieldml (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
+::std::unique_ptr< ::Fieldml_Type >
+Fieldml (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
          ::xml_schema::flags f,
          const ::xml_schema::properties&)
 {
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > c (
     ((f & ::xml_schema::flags::keep_dom) &&
      !(f & ::xml_schema::flags::own_dom))
     ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
@@ -8021,7 +8021,7 @@ Fieldml (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d,
   if (n.name () == "Fieldml" &&
       n.namespace_ () == "")
   {
-    ::std::auto_ptr< ::Fieldml_Type > r (
+    ::std::unique_ptr< ::Fieldml_Type > r (
       ::xsd::cxx::tree::traits< ::Fieldml_Type, char >::create (
         e, f, 0));
     return r;

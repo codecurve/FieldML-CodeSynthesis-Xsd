@@ -1,0 +1,2 @@
+--location-map http://www.cellml.org/tools/cellml_1_1_schema/common/xlink-href.xsd=xlink-href.xsd
+--std c++11
