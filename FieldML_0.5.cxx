@@ -8034,6 +8034,1745 @@ Fieldml (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
     "");
 }
 
+#include <ostream>
+#include <xsd/cxx/tree/error-handler.hxx>
+#include <xsd/cxx/xml/dom/serialization-source.hxx>
+
+void
+operator<< (::xercesc::DOMElement& e, const FieldmlRdfTargetType& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // id
+  //
+  if (i.id ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "id",
+        e));
+
+    a << *i.id ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const FieldmlObject_Type& i)
+{
+  e << static_cast< const ::FieldmlRdfTargetType& > (i);
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ArrayDataSize_Type& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const ArrayDataSize_Type& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const ArrayDataSize_Type& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ArrayDataOffset_Type& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const ArrayDataOffset_Type& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const ArrayDataOffset_Type& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const RawArraySize_Type& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const RawArraySize_Type& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const RawArraySize_Type& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ArrayDataSource_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // ArrayDataSize
+  //
+  for (ArrayDataSource_Type::ArrayDataSize_const_iterator
+       b (i.ArrayDataSize ().begin ()), n (i.ArrayDataSize ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ArrayDataSize",
+        e));
+
+    s << *b;
+  }
+
+  // ArrayDataOffset
+  //
+  for (ArrayDataSource_Type::ArrayDataOffset_const_iterator
+       b (i.ArrayDataOffset ().begin ()), n (i.ArrayDataOffset ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ArrayDataOffset",
+        e));
+
+    s << *b;
+  }
+
+  // RawArraySize
+  //
+  for (ArrayDataSource_Type::RawArraySize_const_iterator
+       b (i.RawArraySize ().begin ()), n (i.RawArraySize ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "RawArraySize",
+        e));
+
+    s << *b;
+  }
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+
+  // location
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "location",
+        e));
+
+    a << i.location ();
+  }
+
+  // rank
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "rank",
+        e));
+
+    a << i.rank ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const DataResourceHref_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // href
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "href",
+        "http://www.w3.org/1999/xlink",
+        e));
+
+    a << i.href ();
+  }
+
+  // format
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "format",
+        e));
+
+    a << i.format ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const DataResourceString_Type& i)
+{
+  e << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr& a, const DataResourceString_Type& i)
+{
+  a << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xml_schema::list_stream& l,
+            const DataResourceString_Type& i)
+{
+  l << static_cast< const ::xml_schema::string& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const DataResourceDescription_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // DataResourceHref
+  //
+  if (i.DataResourceHref ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "DataResourceHref",
+        e));
+
+    s << *i.DataResourceHref ();
+  }
+
+  // DataResourceString
+  //
+  if (i.DataResourceString ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "DataResourceString",
+        e));
+
+    s << *i.DataResourceString ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const DataResource_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // DataResourceDescription
+  //
+  for (DataResource_Type::DataResourceDescription_const_iterator
+       b (i.DataResourceDescription ().begin ()), n (i.DataResourceDescription ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "DataResourceDescription",
+        e));
+
+    s << *b;
+  }
+
+  // ArrayDataSource
+  //
+  for (DataResource_Type::ArrayDataSource_const_iterator
+       b (i.ArrayDataSource ().begin ()), n (i.ArrayDataSource ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ArrayDataSource",
+        e));
+
+    s << *b;
+  }
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ImportTypeEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // localName
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "localName",
+        e));
+
+    a << i.localName ();
+  }
+
+  // remoteName
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "remoteName",
+        e));
+
+    a << i.remoteName ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ImportEvaluatorEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // localName
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "localName",
+        e));
+
+    a << i.localName ();
+  }
+
+  // remoteName
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "remoteName",
+        e));
+
+    a << i.remoteName ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const Import_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // ImportType
+  //
+  for (Import_Type::ImportType_const_iterator
+       b (i.ImportType ().begin ()), n (i.ImportType ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ImportType",
+        e));
+
+    s << *b;
+  }
+
+  // ImportEvaluator
+  //
+  for (Import_Type::ImportEvaluator_const_iterator
+       b (i.ImportEvaluator ().begin ()), n (i.ImportEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ImportEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // href
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "href",
+        "http://www.w3.org/1999/xlink",
+        e));
+
+    a << i.href ();
+  }
+
+  // region
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "region",
+        e));
+
+    a << i.region ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const NumberedIndexEvaluator_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // evaluator
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "evaluator",
+        e));
+
+    a << i.evaluator ();
+  }
+
+  // indexNumber
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "indexNumber",
+        e));
+
+    a << i.indexNumber ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const NumberedIndexEvaluatorList_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // IndexEvaluator
+  //
+  for (NumberedIndexEvaluatorList_Type::IndexEvaluator_const_iterator
+       b (i.IndexEvaluator ().begin ()), n (i.IndexEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "IndexEvaluator",
+        e));
+
+    s << *b;
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const BindMapEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // argument
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "argument",
+        e));
+
+    a << i.argument ();
+  }
+
+  // source
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "source",
+        e));
+
+    a << i.source ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const BindMapIndexEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // argument
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "argument",
+        e));
+
+    a << i.argument ();
+  }
+
+  // indexNumber
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "indexNumber",
+        e));
+
+    a << i.indexNumber ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const BindMapWithIndexes_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // BindIndex
+  //
+  for (BindMapWithIndexes_Type::BindIndex_const_iterator
+       b (i.BindIndex ().begin ()), n (i.BindIndex ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "BindIndex",
+        e));
+
+    s << *b;
+  }
+
+  // Bind
+  //
+  for (BindMapWithIndexes_Type::Bind_const_iterator
+       b (i.Bind ().begin ()), n (i.Bind ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Bind",
+        e));
+
+    s << *b;
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const BindMap_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // Bind
+  //
+  for (BindMap_Type::Bind_const_iterator
+       b (i.Bind ().begin ()), n (i.Bind ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Bind",
+        e));
+
+    s << *b;
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ComponentEvaluatorsEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // component
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "component",
+        e));
+
+    a << i.component ();
+  }
+
+  // evaluator
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "evaluator",
+        e));
+
+    a << i.evaluator ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ComponentEvaluators_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // ComponentEvaluator
+  //
+  for (ComponentEvaluators_Type::ComponentEvaluator_const_iterator
+       b (i.ComponentEvaluator ().begin ()), n (i.ComponentEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ComponentEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // default
+  //
+  if (i.default_ ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "default",
+        e));
+
+    a << *i.default_ ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ShapeMap_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // evaluator
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "evaluator",
+        e));
+
+    a << i.evaluator ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ArgumentListEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ArgumentList_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // Argument
+  //
+  for (ArgumentList_Type::Argument_const_iterator
+       b (i.Argument ().begin ()), n (i.Argument ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Argument",
+        e));
+
+    s << *b;
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const EvaluatorListEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // evaluator
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "evaluator",
+        e));
+
+    a << i.evaluator ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const IndexEvaluatorList_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // IndexEvaluator
+  //
+  for (IndexEvaluatorList_Type::IndexEvaluator_const_iterator
+       b (i.IndexEvaluator ().begin ()), n (i.IndexEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "IndexEvaluator",
+        e));
+
+    s << *b;
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const OrderedEvaluatorListEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // evaluator
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "evaluator",
+        e));
+
+    a << i.evaluator ();
+  }
+
+  // order
+  //
+  if (i.order ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "order",
+        e));
+
+    a << *i.order ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const OrderedIndexEvaluatorList_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // IndexEvaluator
+  //
+  for (OrderedIndexEvaluatorList_Type::IndexEvaluator_const_iterator
+       b (i.IndexEvaluator ().begin ()), n (i.IndexEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "IndexEvaluator",
+        e));
+
+    s << *b;
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const MemberRange_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // min
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "min",
+        e));
+
+    a << i.min ();
+  }
+
+  // max
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "max",
+        e));
+
+    a << i.max ();
+  }
+
+  // stride
+  //
+  if (i.stride ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "stride",
+        e));
+
+    a << *i.stride ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const MemberData_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // count
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "count",
+        e));
+
+    a << i.count ();
+  }
+
+  // data
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "data",
+        e));
+
+    a << i.data ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const EnsembleMembers_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // MemberListData
+  //
+  if (i.MemberListData ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "MemberListData",
+        e));
+
+    s << *i.MemberListData ();
+  }
+
+  // MemberRangeData
+  //
+  if (i.MemberRangeData ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "MemberRangeData",
+        e));
+
+    s << *i.MemberRangeData ();
+  }
+
+  // MemberStrideRangeData
+  //
+  if (i.MemberStrideRangeData ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "MemberStrideRangeData",
+        e));
+
+    s << *i.MemberStrideRangeData ();
+  }
+
+  // MemberRange
+  //
+  if (i.MemberRange ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "MemberRange",
+        e));
+
+    s << *i.MemberRange ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const BooleanType_Type& i)
+{
+  e << static_cast< const ::FieldmlObject_Type& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const EnsembleType_Type& i)
+{
+  e << static_cast< const ::FieldmlObject_Type& > (i);
+
+  // Members
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Members",
+        e));
+
+    s << i.Members ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ContinuousComponent_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+
+  // count
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "count",
+        e));
+
+    a << i.count ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ContinuousType_Type& i)
+{
+  e << static_cast< const ::FieldmlObject_Type& > (i);
+
+  // Components
+  //
+  if (i.Components ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Components",
+        e));
+
+    s << *i.Components ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const MeshType_Type& i)
+{
+  e << static_cast< const ::FieldmlObject_Type& > (i);
+
+  // Elements
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Elements",
+        e));
+
+    s << i.Elements ();
+  }
+
+  // Chart
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Chart",
+        e));
+
+    s << i.Chart ();
+  }
+
+  // Shapes
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Shapes",
+        e));
+
+    s << i.Shapes ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const FieldmlEvaluator_Type& i)
+{
+  e << static_cast< const ::FieldmlObject_Type& > (i);
+
+  // Arguments
+  //
+  if (i.Arguments ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Arguments",
+        e));
+
+    s << *i.Arguments ();
+  }
+
+  // valueType
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "valueType",
+        e));
+
+    a << i.valueType ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ArgumentEvaluator_Type& i)
+{
+  e << static_cast< const ::FieldmlEvaluator_Type& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ExternalEvaluator_Type& i)
+{
+  e << static_cast< const ::FieldmlEvaluator_Type& > (i);
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ConstantEvaluator_Type& i)
+{
+  e << static_cast< const ::FieldmlObject_Type& > (i);
+
+  // value
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "value",
+        e));
+
+    a << i.value ();
+  }
+
+  // valueType
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "valueType",
+        e));
+
+    a << i.valueType ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ReferenceEvaluator_Type& i)
+{
+  e << static_cast< const ::FieldmlObject_Type& > (i);
+
+  // Arguments
+  //
+  if (i.Arguments ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Arguments",
+        e));
+
+    s << *i.Arguments ();
+  }
+
+  // Bindings
+  //
+  if (i.Bindings ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Bindings",
+        e));
+
+    s << *i.Bindings ();
+  }
+
+  // valueType
+  //
+  if (i.valueType ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "valueType",
+        e));
+
+    a << *i.valueType ();
+  }
+
+  // evaluator
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "evaluator",
+        e));
+
+    a << i.evaluator ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const EvaluatorMapEntry_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // value
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "value",
+        e));
+
+    a << i.value ();
+  }
+
+  // evaluator
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "evaluator",
+        e));
+
+    a << i.evaluator ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const EvaluatorMap_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // EvaluatorMapEntry
+  //
+  for (EvaluatorMap_Type::EvaluatorMapEntry_const_iterator
+       b (i.EvaluatorMapEntry ().begin ()), n (i.EvaluatorMapEntry ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "EvaluatorMapEntry",
+        e));
+
+    s << *b;
+  }
+
+  // default
+  //
+  if (i.default_ ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "default",
+        e));
+
+    a << *i.default_ ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const PiecewiseEvaluator_Type& i)
+{
+  e << static_cast< const ::FieldmlEvaluator_Type& > (i);
+
+  // Bindings
+  //
+  if (i.Bindings ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Bindings",
+        e));
+
+    s << *i.Bindings ();
+  }
+
+  // IndexEvaluators
+  //
+  if (i.IndexEvaluators ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "IndexEvaluators",
+        e));
+
+    s << *i.IndexEvaluators ();
+  }
+
+  // EvaluatorMap
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "EvaluatorMap",
+        e));
+
+    s << i.EvaluatorMap ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const DenseArrayData_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // DenseIndexes
+  //
+  if (i.DenseIndexes ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "DenseIndexes",
+        e));
+
+    s << *i.DenseIndexes ();
+  }
+
+  // data
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "data",
+        e));
+
+    a << i.data ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const DOKArrayData_Type& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+
+  // DenseIndexes
+  //
+  if (i.DenseIndexes ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "DenseIndexes",
+        e));
+
+    s << *i.DenseIndexes ();
+  }
+
+  // SparseIndexes
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "SparseIndexes",
+        e));
+
+    s << i.SparseIndexes ();
+  }
+
+  // keyData
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "keyData",
+        e));
+
+    a << i.keyData ();
+  }
+
+  // valueData
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "valueData",
+        e));
+
+    a << i.valueData ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const ParameterEvaluator_Type& i)
+{
+  e << static_cast< const ::FieldmlEvaluator_Type& > (i);
+
+  // DenseArrayData
+  //
+  if (i.DenseArrayData ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "DenseArrayData",
+        e));
+
+    s << *i.DenseArrayData ();
+  }
+
+  // DOKArrayData
+  //
+  if (i.DOKArrayData ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "DOKArrayData",
+        e));
+
+    s << *i.DOKArrayData ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const AggregateEvaluator_Type& i)
+{
+  e << static_cast< const ::FieldmlEvaluator_Type& > (i);
+
+  // Bindings
+  //
+  if (i.Bindings ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Bindings",
+        e));
+
+    s << *i.Bindings ();
+  }
+
+  // ComponentEvaluators
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ComponentEvaluators",
+        e));
+
+    s << i.ComponentEvaluators ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const Region_Type& i)
+{
+  e << static_cast< const ::FieldmlRdfTargetType& > (i);
+
+  // Import
+  //
+  for (Region_Type::Import_const_iterator
+       b (i.Import ().begin ()), n (i.Import ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Import",
+        e));
+
+    s << *b;
+  }
+
+  // DataResource
+  //
+  for (Region_Type::DataResource_const_iterator
+       b (i.DataResource ().begin ()), n (i.DataResource ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "DataResource",
+        e));
+
+    s << *b;
+  }
+
+  // BooleanType
+  //
+  for (Region_Type::BooleanType_const_iterator
+       b (i.BooleanType ().begin ()), n (i.BooleanType ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "BooleanType",
+        e));
+
+    s << *b;
+  }
+
+  // EnsembleType
+  //
+  for (Region_Type::EnsembleType_const_iterator
+       b (i.EnsembleType ().begin ()), n (i.EnsembleType ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "EnsembleType",
+        e));
+
+    s << *b;
+  }
+
+  // ContinuousType
+  //
+  for (Region_Type::ContinuousType_const_iterator
+       b (i.ContinuousType ().begin ()), n (i.ContinuousType ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ContinuousType",
+        e));
+
+    s << *b;
+  }
+
+  // MeshType
+  //
+  for (Region_Type::MeshType_const_iterator
+       b (i.MeshType ().begin ()), n (i.MeshType ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "MeshType",
+        e));
+
+    s << *b;
+  }
+
+  // ArgumentEvaluator
+  //
+  for (Region_Type::ArgumentEvaluator_const_iterator
+       b (i.ArgumentEvaluator ().begin ()), n (i.ArgumentEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ArgumentEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // ExternalEvaluator
+  //
+  for (Region_Type::ExternalEvaluator_const_iterator
+       b (i.ExternalEvaluator ().begin ()), n (i.ExternalEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ExternalEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // ReferenceEvaluator
+  //
+  for (Region_Type::ReferenceEvaluator_const_iterator
+       b (i.ReferenceEvaluator ().begin ()), n (i.ReferenceEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ReferenceEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // ConstantEvaluator
+  //
+  for (Region_Type::ConstantEvaluator_const_iterator
+       b (i.ConstantEvaluator ().begin ()), n (i.ConstantEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ConstantEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // PiecewiseEvaluator
+  //
+  for (Region_Type::PiecewiseEvaluator_const_iterator
+       b (i.PiecewiseEvaluator ().begin ()), n (i.PiecewiseEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "PiecewiseEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // ParameterEvaluator
+  //
+  for (Region_Type::ParameterEvaluator_const_iterator
+       b (i.ParameterEvaluator ().begin ()), n (i.ParameterEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "ParameterEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // AggregateEvaluator
+  //
+  for (Region_Type::AggregateEvaluator_const_iterator
+       b (i.AggregateEvaluator ().begin ()), n (i.AggregateEvaluator ().end ());
+       b != n; ++b)
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "AggregateEvaluator",
+        e));
+
+    s << *b;
+  }
+
+  // name
+  //
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "name",
+        e));
+
+    a << i.name ();
+  }
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const Fieldml_Type& i)
+{
+  e << static_cast< const ::FieldmlRdfTargetType& > (i);
+
+  // Region
+  //
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Region",
+        e));
+
+    s << i.Region ();
+  }
+
+  // version
+  //
+  if (i.version ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "version",
+        e));
+
+    a << *i.version ();
+  }
+}
+
+void
+Fieldml (::std::ostream& o,
+         const ::Fieldml_Type& s,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::Fieldml (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+Fieldml (::std::ostream& o,
+         const ::Fieldml_Type& s,
+         ::xml_schema::error_handler& h,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::Fieldml (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Fieldml (::std::ostream& o,
+         const ::Fieldml_Type& s,
+         ::xercesc::DOMErrorHandler& h,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::Fieldml (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Fieldml (::xercesc::XMLFormatTarget& t,
+         const ::Fieldml_Type& s,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::Fieldml (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+Fieldml (::xercesc::XMLFormatTarget& t,
+         const ::Fieldml_Type& s,
+         ::xml_schema::error_handler& h,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::Fieldml (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Fieldml (::xercesc::XMLFormatTarget& t,
+         const ::Fieldml_Type& s,
+         ::xercesc::DOMErrorHandler& h,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::Fieldml (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Fieldml (::xercesc::DOMDocument& d,
+         const ::Fieldml_Type& s,
+         ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (n.name () == "Fieldml" &&
+      n.namespace_ () == "")
+  {
+    e << s;
+  }
+  else
+  {
+    throw ::xsd::cxx::tree::unexpected_element < char > (
+      n.name (),
+      n.namespace_ (),
+      "Fieldml",
+      "");
+  }
+}
+
+::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
+Fieldml (const ::Fieldml_Type& s,
+         const ::xml_schema::namespace_infomap& m,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::serialize< char > (
+      "Fieldml",
+      "",
+      m, f));
+
+  ::Fieldml (*d, s, f);
+  return d;
+}
+
 #include <xsd/cxx/post.hxx>
 
 // Begin epilogue.

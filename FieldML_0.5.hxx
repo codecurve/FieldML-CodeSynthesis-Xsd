@@ -83,6 +83,21 @@
 #include <xsd/cxx/tree/parsing/double.hxx>
 #include <xsd/cxx/tree/parsing/decimal.hxx>
 
+#include <xsd/cxx/xml/dom/serialization-header.hxx>
+#include <xsd/cxx/tree/serialization.hxx>
+#include <xsd/cxx/tree/serialization/byte.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-byte.hxx>
+#include <xsd/cxx/tree/serialization/short.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-short.hxx>
+#include <xsd/cxx/tree/serialization/int.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-int.hxx>
+#include <xsd/cxx/tree/serialization/long.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-long.hxx>
+#include <xsd/cxx/tree/serialization/boolean.hxx>
+#include <xsd/cxx/tree/serialization/float.hxx>
+#include <xsd/cxx/tree/serialization/double.hxx>
+#include <xsd/cxx/tree/serialization/decimal.hxx>
+
 namespace xml_schema
 {
   // anyType and anySimpleType.
@@ -179,6 +194,16 @@ namespace xml_schema
   typedef ::xsd::cxx::tree::entities< char, simple_type, entity > entities;
 
   typedef ::xsd::cxx::tree::content_order content_order;
+  // Namespace information and list stream. Used in
+  // serialization functions.
+  //
+  typedef ::xsd::cxx::xml::dom::namespace_info< char > namespace_info;
+  typedef ::xsd::cxx::xml::dom::namespace_infomap< char > namespace_infomap;
+  typedef ::xsd::cxx::tree::list_stream< char > list_stream;
+  typedef ::xsd::cxx::tree::as_double< double_ > as_double;
+  typedef ::xsd::cxx::tree::as_decimal< decimal > as_decimal;
+  typedef ::xsd::cxx::tree::facet facet;
+
   // Flags and properties.
   //
   typedef ::xsd::cxx::tree::flags flags;
@@ -202,6 +227,7 @@ namespace xml_schema
   typedef ::xsd::cxx::tree::unexpected_enumerator< char > unexpected_enumerator;
   typedef ::xsd::cxx::tree::expected_text_content< char > expected_text_content;
   typedef ::xsd::cxx::tree::no_prefix_mapping< char > no_prefix_mapping;
+  typedef ::xsd::cxx::tree::serialization< char > serialization;
 
   // Error handler callback interface.
   //
@@ -4072,6 +4098,260 @@ Fieldml (const ::xercesc::DOMDocument& d,
 Fieldml (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
          ::xml_schema::flags f = 0,
          const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+#include <iosfwd>
+
+#include <xercesc/dom/DOMDocument.hpp>
+#include <xercesc/dom/DOMErrorHandler.hpp>
+#include <xercesc/framework/XMLFormatter.hpp>
+
+#include <xsd/cxx/xml/dom/auto-ptr.hxx>
+
+void
+operator<< (::xercesc::DOMElement&, const FieldmlRdfTargetType&);
+
+void
+operator<< (::xercesc::DOMElement&, const FieldmlObject_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ArrayDataSize_Type&);
+
+void
+operator<< (::xercesc::DOMAttr&, const ArrayDataSize_Type&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const ArrayDataSize_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ArrayDataOffset_Type&);
+
+void
+operator<< (::xercesc::DOMAttr&, const ArrayDataOffset_Type&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const ArrayDataOffset_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const RawArraySize_Type&);
+
+void
+operator<< (::xercesc::DOMAttr&, const RawArraySize_Type&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const RawArraySize_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ArrayDataSource_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const DataResourceHref_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const DataResourceString_Type&);
+
+void
+operator<< (::xercesc::DOMAttr&, const DataResourceString_Type&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const DataResourceString_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const DataResourceDescription_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const DataResource_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ImportTypeEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ImportEvaluatorEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const Import_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const NumberedIndexEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const NumberedIndexEvaluatorList_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const BindMapEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const BindMapIndexEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const BindMapWithIndexes_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const BindMap_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ComponentEvaluatorsEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ComponentEvaluators_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ShapeMap_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ArgumentListEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ArgumentList_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const EvaluatorListEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const IndexEvaluatorList_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const OrderedEvaluatorListEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const OrderedIndexEvaluatorList_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const MemberRange_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const MemberData_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const EnsembleMembers_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const BooleanType_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const EnsembleType_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ContinuousComponent_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ContinuousType_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const MeshType_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const FieldmlEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ArgumentEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ExternalEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ConstantEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ReferenceEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const EvaluatorMapEntry_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const EvaluatorMap_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const PiecewiseEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const DenseArrayData_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const DOKArrayData_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParameterEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const AggregateEvaluator_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const Region_Type&);
+
+void
+operator<< (::xercesc::DOMElement&, const Fieldml_Type&);
+
+// Serialize to std::ostream.
+//
+
+void
+Fieldml (::std::ostream& os,
+         const ::Fieldml_Type& x, 
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+void
+Fieldml (::std::ostream& os,
+         const ::Fieldml_Type& x, 
+         ::xml_schema::error_handler& eh,
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+void
+Fieldml (::std::ostream& os,
+         const ::Fieldml_Type& x, 
+         ::xercesc::DOMErrorHandler& eh,
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+Fieldml (::xercesc::XMLFormatTarget& ft,
+         const ::Fieldml_Type& x, 
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+void
+Fieldml (::xercesc::XMLFormatTarget& ft,
+         const ::Fieldml_Type& x, 
+         ::xml_schema::error_handler& eh,
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+void
+Fieldml (::xercesc::XMLFormatTarget& ft,
+         const ::Fieldml_Type& x, 
+         ::xercesc::DOMErrorHandler& eh,
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+Fieldml (::xercesc::DOMDocument& d,
+         const ::Fieldml_Type& x,
+         ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
+Fieldml (const ::Fieldml_Type& x, 
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         ::xml_schema::flags f = 0);
 
 #include <xsd/cxx/post.hxx>
 
